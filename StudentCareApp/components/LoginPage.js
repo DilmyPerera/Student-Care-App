@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { ScrollView, View , StyleSheet } from 'react-native';
-import { Button, PaperProvider, Text } from 'react-native-paper';
+import { Button, PaperProvider, Text , TextInput} from 'react-native-paper';
 import { students } from '../db/StudentsDb';
 import Header from './Header';
 
-export default function LoginPage({navigation}){
+export default function LoginPage(){
     const [username,setUsername] = useState('');
     const [ password, setPassword] = useState('');
     const [ error, setError] = useState();
@@ -18,12 +18,13 @@ export default function LoginPage({navigation}){
         );
 
         if (user) {
-            navigation.replace('Profile', { student: user});
+             navigation.replace('Main');
+            //  navigation.replace('Profile', { student: user});
         } else {
             Alert.alert('Error', 'Username or Password is incorrect');
         }
 
-        navigation.replace('Main');
+       
 
     };
 
