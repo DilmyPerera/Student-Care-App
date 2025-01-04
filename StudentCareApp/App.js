@@ -50,7 +50,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { createStackNavigator } from '@react-navigation/stack';  
+import { createStackNavigator } from '@react-navigation/native-stack';  
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons } from 'react-native-vector-icons';
 
@@ -79,11 +79,16 @@ function MainTabs() {
 
           return <MaterialIcons name={iconName} size={size} color={color} />;
         },
-      })}
-      tabBarOptions={{
-        activeTintColor: '#4b0082',
-        inactiveTintColor: 'gray',
-      }}
+      
+     
+        tabBarActiveTintColor: '#4b0082',
+        tabBarInactiveTintColor: 'gray',
+      
+        tabBarStyle: {
+          paddingBottom: 5,  
+          height: 60,       
+        },
+    })}
     >
       <Tab.Screen name="Profile" component={ProfilePage} />
       <Tab.Screen name="Course" component={CoursePage} />

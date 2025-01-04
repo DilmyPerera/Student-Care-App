@@ -1,10 +1,10 @@
-import { ScrollView, View } from "react-native";
+import { ScrollView, View ,StyleSheet, Text, FlatList} from "react-native";
 import {subjects ,courses, marks}from '../db/StudentsDb';
 import Header from "./Header";
 
 export default function SubjectPage({route}){
     const student = route.params;
-    const studentSubject = subjects.filter((s) => s.course_id === student.course_id);
+    const studentSubjects = subjects.filter((s) => s.course_id === student.course_id);
     const course = courses.find((c) => c.id === student.course_id);
     const studentMarks = marks.filter((m)=>m.student_id === student.id);
 

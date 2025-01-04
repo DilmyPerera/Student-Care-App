@@ -5,7 +5,7 @@ import { Button, PaperProvider, Text } from 'react-native-paper';
 import { students } from '../db/StudentsDb';
 import Header from './Header';
 
-export default function LoginPage(){
+export default function LoginPage({navigation}){
     const [username,setUsername] = useState('');
     const [ password, setPassword] = useState('');
     const [ error, setError] = useState();
@@ -22,6 +22,9 @@ export default function LoginPage(){
         } else {
             Alert.alert('Error', 'Username or Password is incorrect');
         }
+
+        navigation.replace('Main');
+
     };
 
     return(
