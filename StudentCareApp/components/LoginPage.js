@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ScrollView, View , StyleSheet } from 'react-native';
 import { Button, PaperProvider, Text } from 'react-native-paper';
 import { students } from '../db/StudentsDb';
+import Header from './Header';
 
 export default function LoginPage(){
     const [username,setUsername] = useState('');
@@ -26,6 +27,7 @@ export default function LoginPage(){
     return(
         <PaperProvider>
             <ScrollView>
+                <Header/>
                 <View>
                     <View>
                         <Text variant="headlineLarge">STUDENT LOGIN</Text>
