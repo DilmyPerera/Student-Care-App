@@ -1,5 +1,6 @@
 import { ScrollView, View } from "react-native";
 import {subjects ,courses, marks}from '../db/StudentsDb';
+import Header from "./Header";
 
 export default function SubjectPage({route}){
     const student = route.params;
@@ -23,7 +24,7 @@ export default function SubjectPage({route}){
   
     return (
       <View style={styles.container}>
-        <Header />
+        <Header/>
         <Text style={styles.title}>Subjects</Text>
         <Text style={styles.info}>Course Name: {course.name}</Text>
         <Text style={styles.info}>Number of Subjects: {studentSubjects.length}</Text>

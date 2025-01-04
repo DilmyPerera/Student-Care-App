@@ -1,10 +1,12 @@
 import { StyleSheet, View } from "react-native";
 import { Divider, Text } from "react-native-paper";
 import { students } from '../db/StudentsDb'
+import Header from "./Header";
 export default function ProfilePage (){
     const student = students[0];
     return(
-        <View>
+        <View style= {styles.container}>
+            <Header/>
             <Text variant="bodyLarge" style = {styles.title}> {student.name}</Text>
             <Text variant="bodyMedium" style = {styles.info}> Age : {student.age} | Gender : {student.gender}</Text>
             {/* <Text variant="bodyMedium" style = {styles.info> Gender : {student.gender}</Text> */}
