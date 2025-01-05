@@ -2,13 +2,17 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import { courses } from '../db/StudentsDb';
 import { Divider, Text } from "react-native-paper";
 import Header from "./Header";
-export default function CoursePage( {route}){
+import LogoBar from "./LogoBar";
+import BottomNavBar from "./BottomNavBar";
+
+export default function CoursePage( {route,navigation}){
     const { student } = route.params;
     const course = courses.find((c) => c.id === student.course_id);
     return(
         <ScrollView contentContainerStyle ={styles.scrollView}>
             <View style = {styles.container}>
                 <Header/>
+                <LogoBar/>
                 <Text variant="titleLarge" style = {styles.title}> {course.name} </Text>
                 <Text variant="bodyMedium" style = {styles.info}> Code : {course.course_code} |  Dept : {course.department}</Text>
                 <Divider/>
@@ -21,7 +25,9 @@ export default function CoursePage( {route}){
 
                 <Divider/>
 
+                <BottomNavBar navigation={navigation} route={route}/>
             </View>
+
         </ScrollView>
     );
 }
