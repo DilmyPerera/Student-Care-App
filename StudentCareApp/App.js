@@ -62,40 +62,6 @@ import SubjectPage from './components/SubjectPage';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MainTabs() {
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ color, size }) => {
-          let iconName;
-
-          if (route.name === 'Profile') {
-            iconName = 'person';
-          } else if (route.name === 'Course') {
-            iconName = 'school';
-          } else if (route.name === 'Subjects') {
-            iconName = 'book';
-          }
-
-          return <MaterialIcons name={iconName} size={size} color={color} />;
-        },
-      
-     
-        tabBarActiveTintColor: '#4b0082',
-        tabBarInactiveTintColor: 'gray',
-      
-        tabBarStyle: {
-          paddingBottom: 5,  
-          height: 60,       
-        },
-    })}
-    >
-      <Tab.Screen name="Profile" component={ProfilePage} />
-      <Tab.Screen name="Course" component={CoursePage} />
-      <Tab.Screen name="Subjects" component={SubjectPage} />
-    </Tab.Navigator>
-  );
-}
 
 export default function App() {
   return (
